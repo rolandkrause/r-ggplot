@@ -6,11 +6,10 @@ output: html_document
 ---
 
 
-> This practical aims at performing exploratory plots and how-to build layer by layer to be familiar with
-the grammar of graphics.  
 
-##### Those kind of questions are optional {.bonus}
 
+
+> This practical aims at performing exploratory plots and how-to build layer by layer to be familiar with the grammar of graphics. 
 
 # Scatter plots of penguins
 
@@ -22,19 +21,14 @@ The `penguins` dataset is provided by the `palmerpenguins` R package. As for eve
 # Write your answer here
 ```
 
-```{r}
-# Write your answer here
-```
-
-
-##### Plot the body mass on the _y_ axis and the bill length on the _x_ axis.
 
 ```{r}
 # Write your answer here
 ```
 
 
-##### Plot again the body mass on the _y_ axis and the bill length on the _x_ axis, but with colour by `species`
+
+##### Plot the body mass on the _y_ axis and the bill length on the _x_ axis and colour by `species`
 
 ```{r}
 # Write your answer here
@@ -63,12 +57,15 @@ Be careful where the aesthetics are located, so the trend linear lines are **als
 ##### Adjust the aesthetics of point in order to
 
 - the `shape` map to the originated `island`
-- a fixed size of `3`
-- a transparency of 40%
+- a fixed size of `5`
+- a transparency of 30%
 
 ```{block,  opts.label = "tip"}
 You should still have only 3 coloured linear trend lines. Otherwise check to which layer your are adding the aesthetic `shape`.
-Remember that fixed parameters are to be defined outside `aes()`
+
+Remember that fixed parameters are to be defined outside `aes()`.
+
+Be careful with tab-completion. The column you want to work with is called `island` (singular) but there is also a built-in data frame calles `islands` (plural) that has nothing to do with penguins data set.
 ```
 
 ```{r}
@@ -76,7 +73,7 @@ Remember that fixed parameters are to be defined outside `aes()`
 ```
 
 
-##### Ajust the colour aesthetic to the `ggplot()` call to propagate it to both point and regression line.
+##### Adjust the colour aesthetic to the `ggplot()` call to propagate it to both point and regression line.
 Try the scale colour viridis for discrete scale (`scale_colour_viridis_d()`). Try to change the default theme to `theme_bw()`
 
 ```{r}
@@ -87,6 +84,7 @@ Try the scale colour viridis for discrete scale (`scale_colour_viridis_d()`). Tr
 ##### Find a way to produce the following plot:
 
 
+![](img/penguins_viridis.png)
 ```{r}
 # Write your answer here
 ```
@@ -170,7 +168,8 @@ Even if we have too many categories, we can appreciate the amount of `natural_di
 
 
 
-##### Optimize the previous plot by sorting the 5 main deforestation reasons
+##### Optimize the previous plot by sorting the 5 main deforestation reasons {.bonus}
+
 ```{block, opts.label = "tip"}
 Unfortunately, `fct_infreq()` does not have a weight argument yet. 
 You need then to take care of this manually.
@@ -184,3 +183,7 @@ Then use this vector to recode the `reasons` with the reason name when part of t
 ```{r}
 # Write your answer here
 ```
+
+
+
+
